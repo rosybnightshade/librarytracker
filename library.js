@@ -14,15 +14,28 @@ function addToFront() {
 }
 
 function removeFromFront() {
-
+    if(books.length > 0) {
+        const removedBook = books.shift();
+        displayBooks();
+    }
 }
 
 function addToEnd() {
+    let bookInput = document.getElementById('bookInput');
+    const newBook = bookInput.value.trim();
 
+    if(newBook) {
+        books.push(newBook);
+        bookInput.value='';
+        displayBooks();
+    }
 }
 
 function removeFromEnd() {
-    
+    if(books.length > 0) {
+        const removedBook = books.pop();
+        displayBooks();
+    }
 }
 
 displayBooks();
